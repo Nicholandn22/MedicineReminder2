@@ -1,13 +1,15 @@
 package com.example.medicinereminder.view
 
+import android.content.Intent
 import android.os.Bundle
-import android.util.Log
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
 import com.example.medicinereminder.R
+import com.example.medicinereminder.model.SessionManager
 import com.example.medicinereminder.view.Fragments.*
 import com.example.yourapp.ui.tambahpengingat.TambahPengingatFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -16,9 +18,20 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 class MainActivity : AppCompatActivity() {
     private lateinit var fab: FloatingActionButton
     private lateinit var bottomNav: BottomNavigationView
+    private lateinit var sessionManager: SessionManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        // 🔹 Inisialisasi SessionManager
+        sessionManager = SessionManager(this)
+
+        // 🔹 Cek apakah user sudah login, jika tidak, pindah ke LoginActivity
+        if (!sessionManager.isLoggedIn()) {
+            startActivity(Intent(this, LoginActivity::class.java))
+            finish() // Tutup MainActivity agar tidak bisa kembali
+            return
+        }
         setContentView(R.layout.activity_main)
 
         fab = findViewById(R.id.fab_add)
@@ -105,12 +118,16 @@ class MainActivity : AppCompatActivity() {
      */
     private fun handleBackStackChange() {
         val currentFragment = supportFragmentManager.findFragmentById(R.id.fragment_container)
-        if (currentFragment is HomeFragment ||
-            currentFragment is LansiaFragment ||
-            currentFragment is ObatFragment) {
-            toggleBottomNav(true) // Munculkan bottom nav & FAB jika kembali ke fragment utama
-        } else {
-            toggleBottomNav(false) // Sembunyikan jika masih di halaman tambah
-        }
+        toggleBottomNav(currentFragment is HomeFragment ||
+                currentFragment is LansiaFragment ||
+                currentFragment is ObatFragment)
     }
+
+    // 🔹 Tambahkan menu logout
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.main_menu, menu)
+        return true
+    }
+
+
 }
