@@ -2,5 +2,6 @@
     <string name="app_name">MedicineReminder</string>
     <string name="biometric_text"><u>Gunakan Biometrics</u></string>
     <string name="forgetpass_text"><u>Lupa Password ?</u></string>
+    <string name="google_sign_in"><u>Sign in with Google</u></string>
 
 </resources>
