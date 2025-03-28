@@ -34,64 +34,66 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="156dp"
+                android:background="@drawable/corner"
                 android:orientation="vertical">
 
                 <!-- Header Reminder -->
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="174dp"
+                    android:layout_height="37dp"
+                    android:layout_margin="10dp"
                     android:text="Reminder Terdekat"
                     android:textColor="#FF6600"
                     android:textSize="18sp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold" />
 
                 <!-- Detail Waktu -->
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="10:00 AM - 30 April 2024"
-                    android:textColor="#666666"
-                    android:textSize="14sp"
-                    android:layout_marginTop="4dp"
-                    android:layout_marginBottom="12dp"/>
 
                 <!-- Tombol Aksi -->
+                <TextView
+                    android:layout_width="171dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="10:00 AM - 30 April 2024"
+                    android:textColor="#666666"
+                    android:textSize="14sp" />
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
+                    android:layout_margin="8dp"
                     android:gravity="center"
-                    android:layout_marginTop="8dp">
+                    android:orientation="horizontal">
 
                     <com.google.android.material.button.MaterialButton
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                         android:layout_width="0dp"
                         android:layout_height="40dp"
+                        android:layout_marginEnd="8dp"
                         android:layout_weight="1"
                         android:text="SELESAI"
-                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                         android:textColor="#FF6600"
-                        app:strokeColor="#FF6600"
-                        android:layout_marginEnd="8dp"/>
+                        app:strokeColor="#FF6600" />
 
                     <com.google.android.material.button.MaterialButton
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                         android:layout_width="0dp"
                         android:layout_height="40dp"
+                        android:layout_marginEnd="8dp"
                         android:layout_weight="1"
                         android:text="UBAH"
-                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                         android:textColor="#1976D2"
-                        app:strokeColor="#1976D2"
-                        android:layout_marginEnd="8dp"/>
+                        app:strokeColor="#1976D2" />
 
                     <com.google.android.material.button.MaterialButton
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                         android:layout_width="0dp"
                         android:layout_height="40dp"
                         android:layout_weight="1"
                         android:text="HAPUS"
-                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                         android:textColor="#D32F2F"
-                        app:strokeColor="#D32F2F"/>
+                        app:strokeColor="#D32F2F" />
                 </LinearLayout>
 
             </LinearLayout>
