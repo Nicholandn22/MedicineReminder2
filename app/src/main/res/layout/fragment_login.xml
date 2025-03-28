@@ -5,6 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <!-- FrameLayout sebagai Overlay -->
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -33,11 +41,8 @@
 
     </LinearLayout>
 
-    <!-- FrameLayout sebagai Overlay -->
-    <FrameLayout
-        android:layout_marginTop="100dp"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+
+
 
         <TextView
             android:layout_width="wrap_content"
@@ -131,6 +136,7 @@
                     android:orientation="horizontal">
 
                     <Button
+                        android:id="@+id/btn_forgetPass"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -140,6 +146,7 @@
                         android:textColor="@color/black" />
 
                     <Button
+                        android:id="@+id/btn_biometric"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -164,17 +171,19 @@
                         android:background="@android:color/transparent"
                         android:padding="0dp"
                         android:text="@string/google_sign_in"
-                        android:textColor="@color/black" />
+                        android:textColor="@color/black"
+                        tools:ignore="TouchTargetSizeCheck" />
                 </LinearLayout>
 
 
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>
-
-
-
     </FrameLayout>
+
+
+
+
 
 
 

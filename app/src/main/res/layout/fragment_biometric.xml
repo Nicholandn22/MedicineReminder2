@@ -6,6 +6,11 @@
     android:layout_height="match_parent"
     android:background="#F0F0F0">
 
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
     <!-- Background -->
 
     <View
@@ -180,6 +185,7 @@
                         android:orientation="vertical">
 
                         <ImageView
+                            android:id="@+id/btn_sidikjari"
                             android:layout_width="69dp"
                             android:layout_height="63dp"
                             android:contentDescription="Sidik Jari"
@@ -200,6 +206,7 @@
                         android:orientation="vertical">
 
                         <ImageView
+                            android:id="@+id/btn_muka"
                             android:layout_width="82dp"
                             android:layout_height="69dp"
                             android:contentDescription="Gunakan Wajah"
