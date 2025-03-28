@@ -98,7 +98,13 @@
                         android:id="@+id/spinnerJenisObat"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="20dp"/>
+                        android:layout_marginBottom="20dp"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true"
+                        android:clickable="true"
+                        android:descendantFocusability="afterDescendants"
+
+                        />
 
 
 
@@ -107,7 +113,13 @@
                         android:id="@+id/spinnerSatuanObat"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="20dp"/>
+                        android:layout_marginBottom="20dp"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true"
+                        android:clickable="true"
+                        android:descendantFocusability="afterDescendants"
+
+                        />
 
                     <TextView android:text="Notes (Opsional)" android:textSize="14sp" android:textStyle="bold" android:textColor="@color/black" android:layout_height="wrap_content" android:layout_width="wrap_content"/>
                     <TextView android:text="(Notes)" android:textSize="14sp" android:textColor="@color/black" android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_marginBottom="20dp"/>
