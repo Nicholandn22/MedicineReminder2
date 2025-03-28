@@ -9,6 +9,8 @@
     android:background="@color/Oren_Background"
     >
 
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -16,13 +18,13 @@
         tools:context=".view.MainActivity"
         android:backgroundTint="@color/Oren_Background">
 
-        <FrameLayout
+        <androidx.fragment.app.FragmentContainerView
             android:id="@+id/fragment_container"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1" >
 
-        </FrameLayout>
+        </androidx.fragment.app.FragmentContainerView>
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fab_add"
