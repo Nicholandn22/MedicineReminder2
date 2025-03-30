@@ -18,13 +18,16 @@ class LoginActivity : AppCompatActivity() {
 
         sessionManager = SessionManager(this)
 
-        // Mengakses tombol setelah layout di-inflate
+
+//         Mengakses tombol setelah layout di-inflate
         val btnLogin = findViewById<Button>(R.id.btn_login)
         btnLogin.setOnClickListener {
             sessionManager.setLogin(true) // Simpan status login
             startActivity(Intent(this, MainActivity::class.java))
             finish() // Tutup LoginActivity agar tidak bisa kembali
+
         }
+
 
         val btnRegister = findViewById<Button>(R.id.register)
         btnRegister.setOnClickListener {
@@ -58,11 +61,11 @@ class LoginActivity : AppCompatActivity() {
 
         val btn_forgetPass = findViewById<Button>(R.id.btn_forgetPass)
         btn_forgetPass.setOnClickListener {
-            val biometricFragment = FragmentForgetPas()
+            val forgetPassFragment = FragmentForgetPas()
 
             // Ganti fragment yang ada dengan fragment baru
             val transaction = supportFragmentManager.beginTransaction()
-            transaction.replace(R.id.fragment_container, biometricFragment, FragmentBiometric::class.java.simpleName)
+            transaction.replace(R.id.fragment_container, forgetPassFragment, FragmentForgetPas::class.java.simpleName)
 
             // Menambahkan transaksi ini ke back stack agar bisa kembali ke fragment sebelumnya
             transaction.addToBackStack(null)
